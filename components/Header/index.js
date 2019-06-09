@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight + 10,
     position: 'relative',
-    minHeight: Constants.statusBarHeight + 54,
+    minHeight: Constants.statusBarHeight + 60,
   },
   gradient: {
     position: 'absolute',

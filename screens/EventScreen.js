@@ -8,7 +8,7 @@ import HomeHeader from 'components/HomeHeader';
 import EmptyState from 'components/EmptyState';
 import { MonoText } from 'components/StyledText';
 
-export default function HomeScreen() {
+export default function EventScreen() {
   return (
     <ScrollView
       style={styles.container}
@@ -21,8 +21,8 @@ export default function HomeScreen() {
   );
 }
 
-HomeScreen.navigationOptions = {
-  header: <HomeHeader title="Home" />,
+EventScreen.navigationOptions = {
+  header: <HomeHeader title="Event Calendar" />,
 };
 
 const styles = StyleSheet.create({

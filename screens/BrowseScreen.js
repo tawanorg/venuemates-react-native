@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
+import config from 'config/Layout';
 import BrowseHeader from 'components/BrowseHeader';
 import EventCard from 'components/EventCard';
 import { MonoText } from 'components/StyledText';
@@ -63,8 +64,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainerStyle: {
-    paddingHorizontal: 10,
-    paddingVertical: 20,
+    paddingHorizontal: config.gutterWidth,
+    paddingVertical: config.gutterWidth,
   },
   emptyText: {
     textAlign: 'center',
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
   },
   foatingContainer: {
     position: 'absolute',
-    bottom: 10,
+    bottom: config.gutterWidth,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

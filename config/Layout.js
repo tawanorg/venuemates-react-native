@@ -8,6 +8,6 @@ export default {
     width,
     height,
   },
-  gutterWidth: 10,
+  gutterWidth: 15,
   isSmallDevice: width < 375,
 };

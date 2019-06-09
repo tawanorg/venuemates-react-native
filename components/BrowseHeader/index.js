@@ -17,7 +17,7 @@ const BrowseHeader = ({ title }) => {
             color='#FFFFFF'
             style={styles.searchIcon}
           />
-          <HeaderTitle style={styles.titleText}>Melbourne - Wedding</HeaderTitle>
+          <HeaderTitle style={styles.titleText}>Melbourne	• Wedding • 2 Days</HeaderTitle>
         </View>
       </TouchableOpacity>
       <View style={styles.avatarContainer}>
@@ -44,14 +44,16 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: '#FFFFFF',
+    fontSize: 16,
+    lineHeight: 20,
   },
   searchContainer: {
     flex: 1,
     flexDirection: 'row',
     backgroundColor: 'rgba(255,255,255,0.35)',
     borderRadius: 10,
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    paddingVertical: config.gutterWidth / 2,
+    paddingHorizontal: config.gutterWidth / 2,
   },
   avatarContainer: {
     flexDirection: 'row',
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   searchIcon: {
-    marginRight: 10,
+    marginRight: (config.gutterWidth / 2)-3,
   },
   filterButton: {
     flexDirection: 'row',

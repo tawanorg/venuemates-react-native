@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
-import { LinearGradient } from 'expo';
+import { View, Image, StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import Colors from 'config/Colors';
-import { FontAwesome } from '@expo/vector-icons';
-import { MonoText, SubTitle } from '../StyledText';
+import { MonoText, SubTitle, MonoTextBold } from '../StyledText';
 
 const EventCard = ({ photoUrl }) => {
   return (
@@ -25,29 +24,15 @@ const EventCard = ({ photoUrl }) => {
           }}
         />
       </View>
-      <View style={[styles.flexRow, { alignItems: 'center', marginTop: 8 }]}>
+      <View style={[styles.flexRow, { alignItems: 'center', justifyContent: 'space-between', marginTop: 8 }]}>
         <MonoText style={styles.typeText}>WEDDING, MEETING - PRIVATE</MonoText>
+        <View style={[styles.rateContainer, { backgroundColor: Colors.warning }]}>
+          <MonoTextBold style={styles.rateText}>2.9</MonoTextBold>
+        </View>
       </View>
       <SubTitle>Quiet Clubbing VIP Heated Rooftop Party</SubTitle>
       <View style={[styles.flexRow, { alignItems: 'center', marginBottom: 3 }]}>
         <MonoText style={styles.subText}>Start from $500 per day</MonoText>
-      </View>
-      <View style={[styles.flexRow, { alignItems: 'center' }]}>
-        <View style={[styles.flexRow, { alignItems: 'center' }]}>
-          <FontAwesome
-            name="star"
-            size={15}
-            color={Colors.primary}
-            style={styles.star}
-          />
-          <FontAwesome
-            name="star"
-            size={15}
-            color={Colors.primary}
-            style={styles.star}
-          />
-        </View>
-        <MonoText style={styles.starText}>132</MonoText>
       </View>
     </View>
   );
@@ -75,14 +60,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 24,
   },
-  starText: {
-    position: 'relative',
-    top: 1.5,
-    marginLeft: 5,
-    color: Colors.color,
+  rateContainer: {
+    borderRadius: 6,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
   },
-  star: {
-    marginRight: 3,
+  rateText: {
+    color: '#FFFFFF',
+    fontWeight: "600"
   },
   typeText: {
     color: Colors.grey,
