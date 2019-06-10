@@ -7,19 +7,20 @@ import {
 } from 'react-native';
 import config from 'config/Layout';
 import BrowseHeader from 'components/BrowseHeader';
-import EventCard from 'components/EventCard';
+import SmallCard from 'components/SmallCard';
 import { MonoText } from 'components/StyledText';
 import { Feather } from '@expo/vector-icons';
 
 const MOCK_ITEMS = [
-  'https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-  'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1074&q=80',
-  'https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80',
-  'https://images.unsplash.com/photo-1521727284875-14f6b020d1d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-  'https://images.unsplash.com/photo-1541559476210-2c7094bc222b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80',
+  'https://images.unsplash.com/photo-1489513691500-41ef4acdb665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1496285416008-dfb54bbaedff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1529347599731-ec02b259c9f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1508137368284-90070818e0ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
 ];
 
-export default function BrowseScreen() {
+export default function DecorScreen() {
   return (
     <View style={styles.container}>
       <FlatList
@@ -31,9 +32,9 @@ export default function BrowseScreen() {
       />
       <View style={styles.foatingContainer}>
         <TouchableOpacity style={styles.foatingButton}>
-          <MonoText style={styles.mapText}>Map</MonoText>
+          <MonoText style={styles.mapText}>Refine</MonoText>
           <Feather
-            name="map"
+            name="filter"
             size={18}
             color='#444444'
           />
@@ -45,13 +46,13 @@ export default function BrowseScreen() {
 
 const renderItem = ({ index, item }) => {
   return (
-    <EventCard 
+    <SmallCard 
       photoUrl={item}
     />
   )
 }
  
-BrowseScreen.navigationOptions = {
+DecorScreen.navigationOptions = {
   header: <BrowseHeader />,
 };
 

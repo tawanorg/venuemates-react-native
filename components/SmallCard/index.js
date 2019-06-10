@@ -5,7 +5,7 @@ import Colors from 'config/Colors';
 import { MonoText, SubTitle } from '../StyledText';
 import RateBox from '../RateBox';
 
-const EventCard = ({ photoUrl }) => {
+const SmallCard = ({ photoUrl }) => {
   return (
     <TouchableOpacity 
       style={[styles.container]}
@@ -28,13 +28,13 @@ const EventCard = ({ photoUrl }) => {
           }}
         />
       </View>
-      <View style={[styles.flexRow, { alignItems: 'center', justifyContent: 'space-between', marginTop: 8 }]}>
-        <MonoText style={styles.typeText}>conference, function - private</MonoText>
-        <RateBox rate={3} />
-      </View>
-      <SubTitle>Quiet VIP Conference or Function Space</SubTitle>
-      <View style={[styles.flexRow, { alignItems: 'center', marginBottom: 3 }]}>
-        <MonoText style={styles.subText}>Start from $500 per day</MonoText>
+      <View style={styles.info}>
+        <View style={[styles.flexRow, { alignItems: 'center', justifyContent: 'space-between' }]}>
+          <MonoText style={styles.subText}>Southbank, VIC</MonoText>
+          <RateBox rate={3} />
+        </View>
+        <SubTitle numberOfLines={1}>Southbank Corporate Catering</SubTitle>
+        <MonoText numberOfLines={2} style={[styles.subText, styles.descText]}>Corporate, Wedding, Event & Meeting</MonoText>
       </View>
     </TouchableOpacity>
   );
@@ -42,32 +42,40 @@ const EventCard = ({ photoUrl }) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative'
+    position: 'relative',
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   imageContainer: {
     position: 'relative',
     overflow: 'hidden',
     borderRadius: 10,
+    width: 90,
+    height: 90,
   },
   image: {
     borderRadius: 10,
-    height: 200,
+    width: 90,
+    height: 90,
+  },
+  info: {
+    flexDirection: 'column',
+    flex: 1,
+    marginLeft: 10
   },
   flexRow: {
     flexDirection: 'row',
     alignItems: 'center'
   },
+  descText: {
+    color: Colors.grey,
+  },
   subText: {
     color: Colors.grey,
-    fontSize: 14,
-    lineHeight: 24,
-  },
-  typeText: {
-    color: Colors.grey,
-    fontSize: 14,
-    lineHeight: 24,
+    fontSize: 13,
+    lineHeight: 18,
     textTransform: 'uppercase'
   }
 });
 
-export default EventCard;
+export default SmallCard;

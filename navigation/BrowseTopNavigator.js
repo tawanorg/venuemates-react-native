@@ -4,16 +4,18 @@ import { createMaterialTopTabNavigator } from 'react-navigation';
 import BrowseHeader from 'components/BrowseHeader';
 import TabButtons from 'components/TabButtons';
 import BrowseScreen from '../screens/BrowseScreen';
-import HomeScreen from '../screens/HomeScreen';
-  
+import CateringScreen from '../screens/CateringScreen';
+import DecorScreen from '../screens/DecorScreen';
+import VendorsScreen from '../screens/VendorsScreen';
+
 const BrowseTopNavigator = createMaterialTopTabNavigator({
-  LOCATION: BrowseScreen,
-  FOODANDBEVERAGE: HomeScreen,
-  COMMUTE: HomeScreen,
-  SERVICES: HomeScreen,
+  VENUE: BrowseScreen,
+  CATERING: CateringScreen,
+  DECOR: DecorScreen,
+  SERVICES: VendorsScreen,
 },
 {
-  initialRouteName: 'LOCATION',
+  initialRouteName: 'VENUE',
   tabBarComponent: TabButtons,
   tabBarPosition: 'top',
   swipeEnabled: true,
